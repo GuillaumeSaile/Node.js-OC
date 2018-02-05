@@ -1,4 +1,5 @@
 var http = require('http');
+var EventEmitter = require('events').EventEmitter;
 
 var server = http.createServer(function(req, res) {
     res.writeHead(200);
@@ -11,4 +12,10 @@ server.on('close', function() { // Listen to thye close event
 
 server.listen(8080); // Start the server
 
-server.close() // Stop the server. Trigger the close event
+var game = new EventEmitter();
+
+game.on('gameover', function(message) {
+  console.log(message);
+})
+
+game.emit('gameover', 'vous avez perdu !');
