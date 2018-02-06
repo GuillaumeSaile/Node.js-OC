@@ -1,5 +1,5 @@
 var http = require('http');
-var test = require('test'); // Call test.js (subfolder node_modules)
+var test = require('monmodule'); // Call monmodule.js (subfolder node_modules)
 
 var server = http.createServer(function(req, res) {
     res.writeHead(200);
