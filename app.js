@@ -1,4 +1,3 @@
-var monmodule = require('monmodule');
+var markdown = require('markdown').markdown;
 
-monmodule.direBonjour();
-monmodule.direByeBye();
+console.log(markdown.toHTML('Un paragraphe en **markdown** !'));
