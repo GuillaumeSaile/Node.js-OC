@@ -12,6 +12,6 @@ var game = new EventEmitter();
 
 game.on('gameover', function(message) {
   console.log(message);
-})
+});
 
 game.emit('gameover', 'vous avez perdu !');
